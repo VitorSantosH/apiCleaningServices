@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('common'));
 app.use('/', express.static('build'))
 const portHttp = 8081;
-const portHttpS = 443
+const portHttpS = 8444
 const httpsServer = https.createServer(certificade, app);
 const httpServer = http.createServer(app);
 
@@ -33,4 +33,6 @@ httpServer.listen(portHttp, function () {
 httpsServer.listen(portHttpS, function () {
     console.log('Second site is running on port ' + portHttpS);
 });
+
+
 
